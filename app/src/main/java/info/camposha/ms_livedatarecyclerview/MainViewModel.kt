@@ -1,17 +1,23 @@
 package info.camposha.ms_livedatarecyclerview
 
+//Our imports
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.util.*
 
+//Create viewModel class
 class MainViewModel : ViewModel() {
+    //Our instance properties
     var userMutableLiveData: MutableLiveData<ArrayList<User>?> = MutableLiveData()
     var userArrayList: ArrayList<User>? = null
+
+    //Initialize stuff
     fun init() {
         populateList()
         userMutableLiveData.value = userArrayList
     }
 
+    //generate dummy users
     fun populateList() {
         var user = User()
         user.name = "John Doe"
@@ -50,3 +56,4 @@ class MainViewModel : ViewModel() {
         init()
     }
 }
+//end
